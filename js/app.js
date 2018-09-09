@@ -15,7 +15,6 @@ const App = (() => {
   const addConnections = data => {
     data.map((entity) => {
       entity.beats.map((toBeBeaten) => {
-         console.log(entity.name, toBeBeaten)
          graph.addConnection(entity.name, toBeBeaten)
       })
     })

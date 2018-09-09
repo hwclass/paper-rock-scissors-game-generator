@@ -1,0 +1,17 @@
+{
+  "name": "paper-rock-scissors",
+  "version": "1.0.0",
+  "description": "A game challenge",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha --timeout 10000",
+    "start": "node server.js"
+  },
+  "author": "Baris Guler <harderworking.class@gmail.com> (https://www.github.com/hwclass)",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "4.1.2",
+    "chai-http": "4.2.0",
+    "mocha": "5.2.0"
+  }
+}
