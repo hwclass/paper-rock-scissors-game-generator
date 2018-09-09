@@ -1,7 +1,7 @@
 const DOM = (() => {
   const handleOnRunGameClick = (entityIds) => {
     document.querySelector('#run-game').addEventListener('click', () => {
-      App.init(entityIds, 3000)
+      App.init(entityIds, countdown)
     })
   }
   const attachEvents = () => {
