@@ -286,6 +286,6 @@ textarea {
     }
 }
 
-p, div {
+p, div, section {
     padding: 10px;
 }
