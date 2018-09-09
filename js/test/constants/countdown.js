@@ -4,7 +4,9 @@ const path = require('path')
 fs.readFile(path.resolve('js/constants/countdown.js'), 'utf8', function(err, data) {
   if (err) throw err
 
-  result = new Function(data)()
+  const fn = new Function(data)
+
+  result = fn()
   expected = 3000
 
   if (result !== expected) {

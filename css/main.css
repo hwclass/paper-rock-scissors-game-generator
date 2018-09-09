@@ -285,3 +285,7 @@ textarea {
         page-break-after: avoid;
     }
 }
+
+p, div {
+    padding: 10px;
+}
