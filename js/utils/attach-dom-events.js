@@ -1,13 +1,21 @@
 const DOM = (() => {
   const selectors = {
-    entityButtons: '.entities button',
+    entityButtons: '.choices button',
     runGameButton: '#run-game',
     result: '#result span'
   }
 
-  const handleOnRunGameClick = (entityIds) => {
+  const generateAutoSelection = (graph) => {
+    const nodeId = generateNodeId(graph)
+    autoSelection = graph.nodes[nodeId].value
+    log('computer', autoSelection)
+  }
+
+  const handleOnRunGameClick = (graph) => {
     document.querySelector(selectors.runGameButton).addEventListener('click', () => {
-      App.init(entityIds)
+      generateAutoSelection(graph)
+      message = computeResult(graph, yourSelection, autoSelection)
+      updateResult(message)
     })
   }
 
@@ -15,10 +23,8 @@ const DOM = (() => {
     Array.from(document.querySelectorAll(selector)).map(function(button) {
       button.addEventListener('click', function(evt) {
         cleanResult()
-        entityId = parseInt(evt.target.dataset.id)
-        // yourSelection = Object.keys(entityIds)[entityId-1]
-        yourSelection = entityId
-        console.log(`you: ${Object.keys(entityIds)[entityId-1]}`)
+        yourSelection = evt.target.dataset.id
+        console.log(`you: ${yourSelection}`)
       })
    })
   }
@@ -27,17 +33,34 @@ const DOM = (() => {
     document.querySelector(selectors.result).innerHTML = ''
   }
 
-  const updateResult = (message) => {
+  const updateResult = message => {
     document.querySelector(selectors.result).innerHTML = message
   }
 
-  const attachEvents = () => {
+  const attachEvents = graph => {
     handleOnEntityClick(selectors.entityButtons)
-    handleOnRunGameClick(entityIds)
+    handleOnRunGameClick(graph)
+  }
+
+  const popuplateChoicesIntoView = buttons => {
+    buttons.map((buttonInfo) => {
+      button = document.createElement('button')
+      button.id = buttonInfo.name
+      button.setAttribute('data-id', buttonInfo.name)
+      button.innerHTML = buttonInfo.name
+      document.querySelector('.choices').appendChild(button)
+    })
+  }
+
+  const init = (data, graph) => {
+    DOM.popuplateChoicesIntoView(data)
+    DOM.attachEvents(graph)
   }
 
   return {
     attachEvents,
-    updateResult
+    updateResult,
+    popuplateChoicesIntoView,
+    init
   }
 })()

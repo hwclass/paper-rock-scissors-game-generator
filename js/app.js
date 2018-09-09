@@ -1,17 +1,35 @@
-let computerSelection
-let yourSelection
-
 const App = (() => {
-  const init = (gameEntities) => {
-    var entityId = Math.floor((Math.random() * Object.keys(gameEntities).length)) + 1
-    // computerSelection = Object.keys(gameEntities)[entityId]
-    computerSelection = entityId
-    console.log(`computer: ${Object.keys(gameEntities)[entityId-1]}`)
-    message = computeResult(yourSelection, computerSelection)
-    DOM.updateResult(message)
+  let graph
+  const createGraph = () => {
+    graph = new Graph()
+    return App
+  }
+
+  const addEntitiesIntoGraph = data => {
+    data.map((entity) => {
+      graph.addNode(entity.name)
+    })
+    return App
+  }
+
+  const addConnections = data => {
+    data.map((entity) => {
+      entity.beats.map((toBeBeaten) => {
+         console.log(entity.name, toBeBeaten)
+         graph.addConnection(entity.name, toBeBeaten)
+      })
+    })
+    return App
+  }
+
+  const initDom = data => {
+    DOM.init(data, graph)
   }
 
   return {
-    init
+    createGraph,
+    addEntitiesIntoGraph,
+    addConnections,
+    initDom
   }
 })()
