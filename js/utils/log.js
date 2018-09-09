@@ -1,0 +1,1 @@
+const log = (player, selection) => console.log(`${player}: ${selection}`)

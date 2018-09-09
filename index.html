@@ -24,11 +24,7 @@
   <!-- Add your site or application content here -->
   <p>Hey! This is a Paper - Rock - Scissors Game!</p>
   <main>
-    <div class="entities">
-      <button id="paper" data-id="1">Paper</button>
-      <button id="rock" data-id="2">Rock</button>
-      <button id="scissors" data-id="3">Scissors</button>
-    </div>
+    <div class="choices"></div>
     <div class="actions">
       <button id="run-game">Run Game</button>
     </div>
@@ -36,13 +32,10 @@
       <span></span>
     </section>
   <main>
+  <script src="js/graph.js"></script>
   <script src="js/app.js"></script>
-  <script src="js/models/Paper.js"></script>
-  <script src="js/models/Rock.js"></script>
-  <script src="js/models/Scissors.js"></script>
-  <script src="js/constants/countdown.js"></script>
-  <script src="js/constants/entitiyIds.js"></script>
-  <script src="js/constants/rules.js"></script>
+  <script src="js/utils/log.js"></script>
+  <script src="js/utils/generate-node-id.js"></script>
   <script src="js/utils/attach-dom-events.js"></script>
   <script src="js/utils/compute-result.js"></script>
   <script src="js/index.js"></script>
