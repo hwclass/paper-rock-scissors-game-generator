@@ -1,9 +1,13 @@
+let computerSelection
+let yourSelection
+
 const App = (() => {
-  const init = (gameEntities, countdownValue) => {
-    setTimeout(() => {
-      var entityId = Math.floor((Math.random() * Object.keys(gameEntities).length))
-      console.log(Object.keys(gameEntities)[entityId])
-    }, countdownValue)
+  const init = (gameEntities) => {
+    var entityId = Math.floor((Math.random() * Object.keys(gameEntities).length)) + 1
+    // computerSelection = Object.keys(gameEntities)[entityId]
+    computerSelection = entityId
+    console.log(`computer: ${Object.keys(gameEntities)[entityId-1]}`)
+    computeResult(yourSelection, computerSelection)
   }
 
   return {
