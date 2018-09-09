@@ -7,7 +7,8 @@ const App = (() => {
     // computerSelection = Object.keys(gameEntities)[entityId]
     computerSelection = entityId
     console.log(`computer: ${Object.keys(gameEntities)[entityId-1]}`)
-    computeResult(yourSelection, computerSelection)
+    message = computeResult(yourSelection, computerSelection)
+    DOM.updateResult(message)
   }
 
   return {
