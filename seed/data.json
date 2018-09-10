@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Scissors",
+    "beats": [
+      "Paper", "Lizard"
+    ]
+  },
+  {
+    "name": "Paper",
+    "beats": [
+      "Rock", "Spock"
+    ]
+  },
+  {
+    "name": "Rock",
+    "beats": [
+      "Lizard", "Scissors"
+    ]
+  },
+  {
+    "name": "Lizard",
+    "beats": [
+      "Spock", "Paper"
+    ]
+  },
+  {
+    "name": "Spock",
+    "beats": [
+      "Scissors", "Rock"
+    ]
+  }
+]

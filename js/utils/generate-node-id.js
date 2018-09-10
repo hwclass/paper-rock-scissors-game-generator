@@ -1,0 +1,1 @@
+const generateNodeId = graph => Math.floor((Math.random() * graph.nodes.length - 1)) + 1
