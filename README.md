@@ -1,3 +1,54 @@
+### Paper - Rock - Scissors Game Generator
+
+### General Information
+
+This tiny app is a lovely "Paper - Rock - Scissors Game Generator" which sees the data.json file as the foundation of the game. You can extend with whatever else you want by adding new types of choices to be used inside the game like the following:
+
+```
+{
+  name: "Pillow",
+  beats: [
+    "Rock", "Spock" // ...
+  ]
+}
+```
+
+### Technical Overview
+`./seed/data.json`: This file keeps data to be server from our custom server locally
+`./index.js`: The first foundation file for fetching the data to be served for the client-sidde
+`./app.js`: Initial start point for making some app-specific executions like putting the data into the view. etc.
+`./graph.js`: The graph object which is used to keep the choices data (Paper, Scissors, Rock, etc.) inside with connections to each other. (Paper beats Rock, and etc.).
+
+### Setup
+
+#### Check whether nvm is installed
+```
+nvm -c
+nvm list
+```
+
+#### Install Node.js version 10
+```
+nvm install 10
+```
+
+#### Switch to Node.js version 10
+```
+nvm use 10
+```
+
+#### Install dependencies
+```
+npm install
+```
+
+#### Start the server for data (=> /data)
+```
+npm start
+```
+
+#### Open "index.html" in your browser
+
 ### Instructions
 
 #### Create a graph instance
